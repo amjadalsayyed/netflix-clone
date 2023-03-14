@@ -1,8 +1,8 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import MovieList from "../MovieList/MovieList";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import axios from "axios";
 import "./home.css";
 
 const url = "https://movies-library-production-9d90.up.railway.app/trending";

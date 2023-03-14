@@ -12,7 +12,7 @@ export default function MovieList({ movie }) {
         movie={movie}
         setClickedMovie={setClickedMovie}
         setModalShow={setModalShow}
-      ></Movie>
+      />
 
       <ModalMovie
         movie={clickedMovie}

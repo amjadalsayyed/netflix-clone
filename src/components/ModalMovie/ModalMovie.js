@@ -4,8 +4,8 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import "./modalMovie.css";
-import axios from "axios";
 import { useState } from "react";
+import axios from "axios";
 
 const url = "https://movies-library-production-9d90.up.railway.app/addMovie";
 
@@ -14,11 +14,11 @@ export default function ModalMovie({ onHide, show, movie }) {
 
   const addToFav = async () => {
     const body = {
-      title: movie.title,
+      title: movie.title.replaceAll("'", ""),
       release_date: movie.release_date,
-      overview: movie.overview,
-      poster_path: movie.poster_path,
-      comment: comment,
+      overview: movie.overview.replaceAll("'", ""),
+      poster_path: movie.poster_path.replaceAll("'", ""),
+      comment: comment.replaceAll("'", ""),
     };
     await axios.post(url, body);
     setComment("");
