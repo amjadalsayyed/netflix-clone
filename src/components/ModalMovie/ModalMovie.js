@@ -7,7 +7,7 @@ import "./modalMovie.css";
 import { useState } from "react";
 import axios from "axios";
 
-const url = "https://movies-library-production-9d90.up.railway.app/addMovie";
+const url = `${process.env.REACT_APP_SERVER_URL}/addMovie`;
 
 export default function ModalMovie({ onHide, show, movie }) {
   const [comment, setComment] = useState("");
@@ -43,12 +43,18 @@ export default function ModalMovie({ onHide, show, movie }) {
       >
         <Card.Img
           variant="top"
-          src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`}
           style={{ height: "25rem", width: "18rem" }}
         />
         <div>
           <h5>Overview :</h5>
           <p>{movie.overview}</p>
+          <h5>Release Date :</h5>
+          <p>
+            {movie.release_date === undefined
+              ? "release date and have not yet been made public yet"
+              : movie.release_date}
+          </p>
           <InputGroup>
             <InputGroup.Text>Add Comment Here:</InputGroup.Text>
             <Form.Control
