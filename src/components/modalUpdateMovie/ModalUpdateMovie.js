@@ -17,7 +17,7 @@ export default function ModalUpdateMovie({ onHide, show, movie, setFavArr }) {
       comment: e.target.comment.value.replaceAll("'", ""),
     };
     const { data } = await axios.put(url, body);
-    setFavArr(data);
+    // setFavArr(data);
     onHide();
   };
 

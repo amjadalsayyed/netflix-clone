@@ -27,18 +27,12 @@ export default function FavList() {
     <Container className="cardContainer" style={style1}>
       {favArr.length === 0 ? (
         <div>
-          <h2>You didn't add any faverite Movie yet .</h2>
+          <h2>You didn't add any favorite Movie yet .</h2>
         </div>
       ) : (
         <Row xs={1} sm={2} md={3} xl={4} className="g-4">
           {favArr.map((movie) => {
-            return (
-              <FavMovieList
-                movie={movie}
-                key={movie.id}
-                setFavArr={setFavArr}
-              />
-            );
+            return <FavMovieList movie={movie} key={movie.id} />;
           })}
         </Row>
       )}
