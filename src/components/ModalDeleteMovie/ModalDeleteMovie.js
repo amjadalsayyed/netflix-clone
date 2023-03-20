@@ -7,7 +7,7 @@ export default function ModalDeleteMovie({ onHide, show, movie, setFavArr }) {
   const url = `${process.env.REACT_APP_SERVER_URL}/deleteMovie/${movie.id}`;
   const deleteMovie = async () => {
     const { data } = await axios.delete(url);
-    setFavArr(data);
+    // setFavArr(data);
     onHide();
   };
   return (

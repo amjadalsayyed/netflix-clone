@@ -28,13 +28,11 @@ export default function FavMovieList({ movie, setFavArr }) {
         movie={clickedMovie}
         show={modalUpdateShow}
         onHide={() => setModalUpdateShow(false)}
-        setFavArr={setFavArr}
       />
       <ModalDeleteMovie
         movie={clickedMovie}
         show={modalDeleteShow}
         onHide={() => setModalDeleteShow(false)}
-        setFavArr={setFavArr}
       />
     </>
   );
